@@ -120,7 +120,7 @@ function FinalThanksPage() {
         {/* Footer */}
         <footer className="mt-16 pb-8 text-center text-gray-500">
           <p className="text-sm">
-            © 2025 Nashville Renovation Experts. Your privacy is protected.
+            © 2025 Nashville Premier Home Design. Your privacy is protected.
           </p>
         </footer>
       </div>
