@@ -50,15 +50,14 @@ function HomePage() {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
               Get Your <span className="text-blue-600">Free Guide:</span>
               <br />
-              <span className="text-2xl md:text-3xl lg:text-4xl text-gray-700 font-semibold">
-                Before You Renovate… Read This
+              <span className="text-3xl md:text-4xl lg:text-5xl text-gray-700 font-semibold leading-tight">
+                Before You Renovate… Read This{' '}
+                <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent font-bold">
+                  Brutally Honest Cost Breakdown
+                </span>
               </span>
               <br />
-              <span className="text-2xl md:text-3xl lg:text-4xl bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent font-bold">
-                Brutally Honest Cost Breakdown
-              </span>
-              <br />
-              <span className="text-xl md:text-2xl text-gray-600 font-medium">
+              <span className="text-xl md:text-2xl text-gray-600 font-medium mt-2 block">
                 (Nashville Edition)
               </span>
             </h1>
