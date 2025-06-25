@@ -82,7 +82,15 @@ function ThanksPage() {
                       <div className="bg-green-100 rounded-full p-1 mt-1 flex-shrink-0">
                         <Check className="w-4 h-4 text-green-600" />
                       </div>
-                      <span className="text-gray-700 font-medium">{item}</span>
+                      <span className="text-gray-700 font-medium">
+                        {index === 0 ? (
+                          <>
+                            We'll give you a <strong className="font-bold">Super Mega Giga Detailed Quote™</strong>—no surprises, no hidden fees, just a clear, honest price.
+                          </>
+                        ) : (
+                          item
+                        )}
+                      </span>
                     </div>
                   ))}
                 </div>
