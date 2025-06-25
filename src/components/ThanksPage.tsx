@@ -63,7 +63,7 @@ function ThanksPage() {
          <img 
               src="/image/NashvilleLOGO.png" 
               alt="Nashville Premier Home Design" 
-              className="h-48 mx-auto mb-6 transform scale-100"
+              className="h-78 mx-auto mb-6 transform scale-100"
             />
 
         {/* Hero Section */}
