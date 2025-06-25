@@ -85,7 +85,7 @@ function ThanksPage() {
                       <span className="text-gray-700 font-medium">
                         {index === 0 ? (
                           <>
-                            We'll give you a <strong className="font-bold">Super Mega Giga Detailed Quote™</strong>—no surprises, no hidden fees, just a clear, honest price.
+                            We'll give you a <span className="text-black font-bold italic">Super Mega Giga Detailed Quote™</span>—no surprises, no hidden fees, just a clear, honest price.
                           </>
                         ) : (
                           item
