@@ -50,7 +50,7 @@ function ThanksPage() {
         {/* Hero Section */}
         <main className="max-w-4xl mx-auto px-6 py-8">
           <div className="text-center mb-12">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-12 leading-tight">
               <span className="text-green-600">✅ Thanks</span> for grabbing your guide!
             </h1>
             
