@@ -51,6 +51,11 @@ function HomePage() {
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4'
         }`}>
           <div className="max-w-4xl mx-auto px-6 text-center">
+            <img 
+              src="/image/NashvilleLOGO.png" 
+              alt="Nashville Premier Home Design" 
+              className="h-16 mx-auto mb-6"
+            />
             <div className="inline-flex items-center gap-2 bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-medium mb-6">
               <Shield className="w-4 h-4" />
               Trusted by 500+ Nashville Homeowners
