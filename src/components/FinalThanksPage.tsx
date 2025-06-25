@@ -82,7 +82,7 @@ function FinalThanksPage() {
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">Call us if you'd like to chat sooner</h3>
                 <a 
-                  href="tel:6155550123" 
+                  href="tel:+16158427373" 
                   className="inline-flex items-center gap-2 text-blue-600 font-bold text-2xl hover:text-blue-700 transition-colors duration-200"
                 >
                   <Phone className="w-6 h-6" />

@@ -118,13 +118,13 @@ function HomePage() {
                   ))}
                 </div>
 
-                <div className="flex items-center gap-2 text-blue-600 font-medium">
+                <a 
+                  href="tel:+16158427373"
+                  className="inline-flex items-center gap-2 text-blue-600 font-medium hover:text-blue-700 hover:underline transition-all duration-200 cursor-pointer"
+                >
                   <Phone className="w-5 h-5" />
-                  <span>Prefer to talk it through? 
-                    Call us at (615) 842-7373 </span>
-            
-                   
-                </div>
+                  <span>Prefer to talk it through? Call us at (615) 842-7373</span>
+                </a>
               </div>
 
               {/* Form */}

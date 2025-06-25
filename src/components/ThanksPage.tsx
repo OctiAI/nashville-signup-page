@@ -266,7 +266,7 @@ function ThanksPage() {
                 <div className="mt-6 pt-6 border-t border-blue-200 text-center">
                   <p className="text-gray-600 mb-3">Or skip the form and just call us direct:</p>
                   <a 
-                    href="tel:6155550123" 
+                    href="tel:+16158427373" 
                     className="inline-flex items-center gap-2 text-blue-600 font-bold text-lg hover:text-blue-700 transition-colors duration-200"
                   >
                     <Phone className="w-5 h-5" />
