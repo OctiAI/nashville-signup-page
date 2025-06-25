@@ -123,7 +123,7 @@ function HomePage() {
                   <span>Prefer to talk it through? Call us at </span>
                   <a 
                     href="tel:+16158427373" 
-                    className="text-blue-600 font-medium hover:text-blue-700 transition-colors duration-200 underline"
+                    className="text-blue-600 font-medium hover:text-blue-700 transition-colors duration-200 "
                   >
                     (615) 842-7373
                   </a>
