@@ -58,7 +58,7 @@ function HomePage() {
             <img 
               src="/image/NashvilleLOGO.png" 
               alt="Nashville Premier Home Design" 
-              className="h-20 mx-auto mb-6 transform scale-110"
+              className="h-40 mx-auto mb-6 transform scale-100"
             />
           </div>
         </header>
