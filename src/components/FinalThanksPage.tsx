@@ -31,6 +31,11 @@ function FinalThanksPage() {
             </div>
           </div>
         </header>
+         <img 
+              src="/image/NashvilleLOGO.png" 
+              alt="Nashville Premier Home Design" 
+              className="h-48 mx-auto mb-6 transform scale-100"
+            />
 
         {/* Hero Section */}
         <main className="max-w-4xl mx-auto px-6 py-8">
