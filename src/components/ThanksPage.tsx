@@ -270,7 +270,7 @@ function ThanksPage() {
                     className="inline-flex items-center gap-2 text-blue-600 font-bold text-lg hover:text-blue-700 transition-colors duration-200"
                   >
                     <Phone className="w-5 h-5" />
-                    (615) 555-0123
+                    (615) 842-7373
                   </a>
                   <p className="text-sm text-gray-500 mt-2">We'll take care of you.</p>
                 </div>
