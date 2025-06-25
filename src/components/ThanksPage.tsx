@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Check, Phone, Home, Shield, Star, Award } from 'lucide-react';
 
 function ThanksPage() {
   const navigate = useNavigate();
+  const [isVisible, setIsVisible] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -14,10 +15,19 @@ function ThanksPage() {
     message: ''
   });
 
+  useEffect(() => {
+    setIsVisible(true);
+  }, []);
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log('Quote form submitted:', formData);
-    navigate('/thanks2');
+    
+    // Add fade out animation before navigation
+    setIsVisible(false);
+    setTimeout(() => {
+      navigate('/thanks2');
+    }, 300);
   };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
@@ -28,7 +38,9 @@ function ThanksPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100">
+    <div className={`min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 transition-all duration-500 ${
+      isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+    }`}>
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-[0.03]">
         <div className="absolute inset-0" style={{
@@ -38,7 +50,9 @@ function ThanksPage() {
 
       <div className="relative z-10">
         {/* Header */}
-        <header className="pt-8 pb-4">
+        <header className={`pt-8 pb-4 transition-all duration-700 delay-100 ${
+          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4'
+        }`}>
           <div className="max-w-4xl mx-auto px-6 text-center">
             <div className="inline-flex items-center gap-2 bg-green-600 text-white px-4 py-2 rounded-full text-sm font-medium mb-6">
               <Check className="w-4 h-4" />
@@ -49,7 +63,9 @@ function ThanksPage() {
 
         {/* Hero Section */}
         <main className="max-w-4xl mx-auto px-6 py-8">
-          <div className="text-center mb-12">
+          <div className={`text-center mb-12 transition-all duration-700 delay-200 ${
+            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+          }`}>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-12 leading-tight">
               <span className="text-green-600">✅ Thanks</span> for grabbing your guide!
             </h1>
@@ -60,10 +76,14 @@ function ThanksPage() {
           </div>
 
           {/* Main Content */}
-          <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12 mb-12 border border-gray-100">
+          <div className={`bg-white rounded-2xl shadow-xl p-8 md:p-12 mb-12 border border-gray-100 transition-all duration-700 delay-300 ${
+            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+          }`}>
             <div className="grid lg:grid-cols-2 gap-12 items-start">
               {/* Left Column - Content */}
-              <div>
+              <div className={`transition-all duration-700 delay-400 ${
+                isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'
+              }`}>
                 <p className="text-lg text-gray-600 mb-8 leading-relaxed">
                   The guide gives you a great starting point.
                 </p>
@@ -78,7 +98,9 @@ function ThanksPage() {
                     'Includes a free 3D design preview so you can see your space before you commit.',
                     'Andrew (my son) will personally review your info and give you a call to walk through it—no pressure, just answers.'
                   ].map((item, index) => (
-                    <div key={index} className="flex items-start gap-3">
+                    <div key={index} className={`flex items-start gap-3 transition-all duration-500 ${
+                      isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4'
+                    }`} style={{ transitionDelay: `${500 + index * 100}ms` }}>
                       <div className="bg-green-100 rounded-full p-1 mt-1 flex-shrink-0">
                         <Check className="w-4 h-4 text-green-600" />
                       </div>
@@ -96,7 +118,9 @@ function ThanksPage() {
                 </div>
 
                 {/* Kitchen/Bath Preview Image Placeholder */}
-                <div className="bg-gradient-to-br from-blue-100 to-indigo-100 rounded-xl p-8 text-center border border-blue-200 mb-8">
+                <div className={`bg-gradient-to-br from-blue-100 to-indigo-100 rounded-xl p-8 text-center border border-blue-200 mb-8 transition-all duration-700 delay-700 ${
+                  isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
+                }`}>
                   <Home className="w-16 h-16 text-blue-600 mx-auto mb-4" />
                   <p className="text-blue-800 font-medium">Beautiful Kitchen & Bath Transformations</p>
                   <p className="text-blue-600 text-sm">See your space in 3D before you commit</p>
@@ -104,7 +128,9 @@ function ThanksPage() {
               </div>
 
               {/* Right Column - Form */}
-              <div className="bg-gradient-to-b from-blue-50 to-indigo-50 rounded-xl p-8 border border-blue-100">
+              <div className={`bg-gradient-to-b from-blue-50 to-indigo-50 rounded-xl p-8 border border-blue-100 transition-all duration-700 delay-500 ${
+                isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'
+              }`}>
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <div>
                     <label htmlFor="name" className="block text-sm font-semibold text-gray-700 mb-2">
@@ -117,7 +143,7 @@ function ThanksPage() {
                       required
                       value={formData.name}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200 bg-white"
+                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200 bg-white transform focus:scale-[1.02]"
                       placeholder="Enter your full name"
                     />
                   </div>
@@ -133,7 +159,7 @@ function ThanksPage() {
                       required
                       value={formData.email}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200 bg-white"
+                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200 bg-white transform focus:scale-[1.02]"
                       placeholder="Enter your email address"
                     />
                   </div>
@@ -149,7 +175,7 @@ function ThanksPage() {
                       required
                       value={formData.phone}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200 bg-white"
+                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200 bg-white transform focus:scale-[1.02]"
                       placeholder="(615) 555-0123"
                     />
                   </div>
@@ -165,7 +191,7 @@ function ThanksPage() {
                       required
                       value={formData.address}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200 bg-white"
+                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200 bg-white transform focus:scale-[1.02]"
                       placeholder="Enter your address"
                     />
                   </div>
@@ -180,7 +206,7 @@ function ThanksPage() {
                       required
                       value={formData.projectType}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200 bg-white"
+                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200 bg-white transform focus:scale-[1.02]"
                     >
                       <option value="">Select project type</option>
                       <option value="kitchen">Kitchen</option>
@@ -200,7 +226,7 @@ function ThanksPage() {
                       required
                       value={formData.timeline}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200 bg-white"
+                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200 bg-white transform focus:scale-[1.02]"
                     >
                       <option value="">Select timeline</option>
                       <option value="ready-now">Ready now</option>
@@ -219,14 +245,14 @@ function ThanksPage() {
                       rows={4}
                       value={formData.message}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200 bg-white resize-none"
+                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200 bg-white resize-none transform focus:scale-[1.02]"
                       placeholder="Tell us about your vision, budget, or any specific requirements..."
                     />
                   </div>
 
                   <button
                     type="submit"
-                    className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-bold py-4 px-6 rounded-lg transition-all duration-200 transform hover:scale-[1.02] active:scale-[0.98] shadow-lg hover:shadow-xl text-lg"
+                    className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-bold py-4 px-6 rounded-lg transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98] shadow-lg hover:shadow-xl text-lg"
                   >
                     Get My Free Quote & 3D Design
                   </button>
@@ -236,7 +262,7 @@ function ThanksPage() {
                   <p className="text-gray-600 mb-3">Or skip the form and just call us direct:</p>
                   <a 
                     href="tel:6155550123" 
-                    className="inline-flex items-center gap-2 text-blue-600 font-bold text-lg hover:text-blue-700 transition-colors"
+                    className="inline-flex items-center gap-2 text-blue-600 font-bold text-lg hover:text-blue-700 transition-colors duration-200"
                   >
                     <Phone className="w-5 h-5" />
                     (615) 555-0123
@@ -248,7 +274,9 @@ function ThanksPage() {
           </div>
 
           {/* Trust Footer */}
-          <div className="text-center">
+          <div className={`text-center transition-all duration-700 delay-800 ${
+            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+          }`}>
             <div className="bg-white rounded-2xl shadow-lg p-6 border border-gray-100">
               <div className="flex flex-wrap justify-center items-center gap-6 text-sm font-medium text-gray-700">
                 <div className="flex items-center gap-2">
@@ -277,7 +305,9 @@ function ThanksPage() {
         </main>
 
         {/* Footer */}
-        <footer className="mt-16 pb-8 text-center text-gray-500">
+        <footer className={`mt-16 pb-8 text-center text-gray-500 transition-all duration-700 delay-900 ${
+          isVisible ? 'opacity-100' : 'opacity-0'
+        }`}>
           <p className="text-sm">
             © 2025 Nashville Premier Home Design. Your privacy is protected.
           </p>

@@ -1,9 +1,17 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Check, Phone, Mail, Shield, Star, Award, Home } from 'lucide-react';
 
 function FinalThanksPage() {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    setIsVisible(true);
+  }, []);
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100">
+    <div className={`min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 transition-all duration-500 ${
+      isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+    }`}>
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-[0.03]">
         <div className="absolute inset-0" style={{
@@ -13,7 +21,9 @@ function FinalThanksPage() {
 
       <div className="relative z-10">
         {/* Header */}
-        <header className="pt-8 pb-4">
+        <header className={`pt-8 pb-4 transition-all duration-700 delay-100 ${
+          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4'
+        }`}>
           <div className="max-w-4xl mx-auto px-6 text-center">
             <div className="inline-flex items-center gap-2 bg-green-600 text-white px-4 py-2 rounded-full text-sm font-medium mb-6">
               <Check className="w-4 h-4" />
@@ -24,12 +34,16 @@ function FinalThanksPage() {
 
         {/* Hero Section */}
         <main className="max-w-4xl mx-auto px-6 py-8">
-          <div className="text-center mb-12">
+          <div className={`text-center mb-12 transition-all duration-700 delay-200 ${
+            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+          }`}>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
               Thanks for requesting your quote!
             </h1>
             
-            <div className="bg-green-100 rounded-2xl p-6 mb-8 border border-green-200">
+            <div className={`bg-green-100 rounded-2xl p-6 mb-8 border border-green-200 transition-all duration-700 delay-300 ${
+              isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
+            }`}>
               <div className="flex items-center justify-center gap-3 mb-4">
                 <div className="bg-green-600 rounded-full p-2">
                   <Check className="w-6 h-6 text-white" />
@@ -44,7 +58,9 @@ function FinalThanksPage() {
           </div>
 
           {/* Main Content */}
-          <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12 mb-12 border border-gray-100">
+          <div className={`bg-white rounded-2xl shadow-xl p-8 md:p-12 mb-12 border border-gray-100 transition-all duration-700 delay-400 ${
+            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+          }`}>
             <div className="text-center mb-8">
               <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
                 In the meantime, feel free to:
@@ -53,14 +69,16 @@ function FinalThanksPage() {
 
             <div className="grid md:grid-cols-2 gap-8 mb-12">
               {/* Call Option */}
-              <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-8 text-center border border-blue-200">
+              <div className={`bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-8 text-center border border-blue-200 transition-all duration-700 delay-500 ${
+                isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'
+              }`}>
                 <div className="bg-blue-600 rounded-full p-4 w-16 h-16 mx-auto mb-4 flex items-center justify-center">
                   <Phone className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">Call us if you'd like to chat sooner</h3>
                 <a 
                   href="tel:6155550123" 
-                  className="inline-flex items-center gap-2 text-blue-600 font-bold text-2xl hover:text-blue-700 transition-colors"
+                  className="inline-flex items-center gap-2 text-blue-600 font-bold text-2xl hover:text-blue-700 transition-colors duration-200"
                 >
                   <Phone className="w-6 h-6" />
                   (615) 555-0123
@@ -68,7 +86,9 @@ function FinalThanksPage() {
               </div>
 
               {/* Email Option */}
-              <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl p-8 text-center border border-green-200">
+              <div className={`bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl p-8 text-center border border-green-200 transition-all duration-700 delay-600 ${
+                isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'
+              }`}>
                 <div className="bg-green-600 rounded-full p-4 w-16 h-16 mx-auto mb-4 flex items-center justify-center">
                   <Mail className="w-8 h-8 text-white" />
                 </div>
@@ -78,7 +98,9 @@ function FinalThanksPage() {
             </div>
 
             {/* Promise Statement */}
-            <div className="bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl p-8 text-center text-white">
+            <div className={`bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl p-8 text-center text-white transition-all duration-700 delay-700 ${
+              isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
+            }`}>
               <h3 className="text-2xl font-bold mb-4">Our Promise to You</h3>
               <p className="text-xl leading-relaxed">
                 We're local, veteran-owned, and proud to deliver the kind of honest, detailed quotes you deserve. 
@@ -89,7 +111,9 @@ function FinalThanksPage() {
           </div>
 
           {/* Trust Footer */}
-          <div className="text-center">
+          <div className={`text-center transition-all duration-700 delay-800 ${
+            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+          }`}>
             <div className="bg-white rounded-2xl shadow-lg p-6 border border-gray-100">
               <div className="flex flex-wrap justify-center items-center gap-6 text-sm font-medium text-gray-700">
                 <div className="flex items-center gap-2">
@@ -118,7 +142,9 @@ function FinalThanksPage() {
         </main>
 
         {/* Footer */}
-        <footer className="mt-16 pb-8 text-center text-gray-500">
+        <footer className={`mt-16 pb-8 text-center text-gray-500 transition-all duration-700 delay-900 ${
+          isVisible ? 'opacity-100' : 'opacity-0'
+        }`}>
           <p className="text-sm">
             © 2025 Nashville Premier Home Design. Your privacy is protected.
           </p>
